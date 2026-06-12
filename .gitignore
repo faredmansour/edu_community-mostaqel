@@ -1,0 +1,21 @@
+# Database
+mongodb_data/
+
+# Backend node_modules and env
+educommunity-backend/node_modules/
+educommunity-backend/.env
+educommunity-backend/uploads/
+educommunity-backend/*.log
+
+# Frontend node_modules and build outputs
+educommunity-frontend/educommunity-frontend/node_modules/
+educommunity-frontend/educommunity-frontend/dist/
+educommunity-frontend/educommunity-frontend/.env
+educommunity-frontend/educommunity-frontend/*.log
+
+# General IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.log
+Thumbs.db
