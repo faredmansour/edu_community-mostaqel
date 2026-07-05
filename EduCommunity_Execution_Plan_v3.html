@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCommunity Egypt — خطة التنفيذ التفصيلية v3</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --font-sans:"Segoe UI",Tahoma,"Helvetica Neue",Arial,sans-serif;
+  --color-text-primary:#1a1a18;
+  --color-text-secondary:#5f5e5a;
+  --color-text-tertiary:#969590;
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f4f2ec;
+  --color-background-page:#faf9f5;
+  --color-border-tertiary:rgba(0,0,0,0.12);
+  --color-border-secondary:rgba(0,0,0,0.22);
+  --border-radius-md:8px;
+  --border-radius-lg:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --color-text-primary:#ececea;
+    --color-text-secondary:#b4b2a9;
+    --color-text-tertiary:#888780;
+    --color-background-primary:#1f1f1d;
+    --color-background-secondary:#2a2a27;
+    --color-background-page:#161614;
+    --color-border-tertiary:rgba(255,255,255,0.14);
+    --color-border-secondary:rgba(255,255,255,0.26);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--color-background-page);color:var(--color-text-primary);line-height:1.6;padding-bottom:2rem}
+.container{max-width:920px;margin:0 auto}
+.hdr{padding:1.5rem 1.5rem 1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.hdr-title{font-size:20px;font-weight:600;margin-bottom:4px}
+.hdr-sub{font-size:13px;color:var(--color-text-secondary)}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;border:0.5px solid;display:flex;align-items:center;gap:4px}
+.p-node{background:#E1F5EE;color:#085041;border-color:#0F6E56}
+.p-react{background:#E6F1FB;color:#0C447C;border-color:#185FA5}
+.p-mongo{background:#FAEEDA;color:#633806;border-color:#854F0B}
+.p-cloud{background:#F1EFE8;color:#444441;border-color:#5F5E5A}
+.p-new{background:#EEEDFE;color:#3C3489;border-color:#534AB7}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem 1.5rem}
+.stat{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center}
+.stat-n{font-size:22px;font-weight:600}
+.stat-l{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+
+.track-wrap{padding:0 1.5rem 1rem}
+.track{height:10px;border-radius:5px;display:flex;overflow:hidden;margin-bottom:6px;gap:2px;direction:ltr}
+.seg{height:100%}
+.tl{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-tertiary);direction:ltr}
+
+.legend{display:flex;flex-wrap:wrap;gap:12px;padding:0 1.5rem .75rem}
+.li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--color-text-secondary)}
+.ld{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+.phases-wrap{padding:0 1rem 1rem}
+.pc{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:10px;overflow:hidden;border-right-width:3px;border-right-style:solid}
+.ph{display:flex;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;background:var(--color-background-primary)}
+.ph:hover{background:var(--color-background-secondary)}
+.badge{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.ptw{flex:1}
+.pname{font-size:15px;font-weight:600}
+.pwk{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
+.tog{font-size:18px;color:var(--color-text-tertiary);transition:transform .25s}
+.tog.open{transform:rotate(180deg)}
+
+.pbody{display:none;padding:14px 15px 16px;border-top:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+.pbody.open{display:block}
+
+.goal{font-size:12px;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:9px 11px;border-radius:var(--border-radius-md);margin-bottom:12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.cc{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px}
+.ct{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.ct-be{color:#0F6E56}
+.ct-fe{color:#185FA5}
+.tl-list{list-style:none}
+.tl-list li{font-size:12.5px;color:var(--color-text-secondary);padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:flex-start;gap:7px}
+.tl-list li:last-child{border-bottom:none}
+.tl-list li::before{content:"";width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.be-d::before{background:#1D9E75}
+.fe-d::before{background:#378ADD}
+.focus-tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:20px;margin-right:4px;font-weight:500;white-space:nowrap}
+.tag-new{background:#EEEDFE;color:#3C3489;border:0.5px solid #534AB7}
+
+.sec-lbl{font-size:10px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.05em;margin:12px 0 6px;display:flex;align-items:center;gap:5px}
+.tech-list{display:flex;flex-direction:column;gap:6px}
+.tech-row{display:flex;gap:8px;font-size:12.5px;align-items:baseline;background:var(--color-background-secondary);padding:7px 10px;border-radius:var(--border-radius-md)}
+.tech-n{font-weight:600;color:#3C3489;flex-shrink:0;min-width:120px}
+.tech-b{color:var(--color-text-secondary)}
+
+.del-tags{display:flex;flex-wrap:wrap;gap:5px}
+.del-tag{font-size:11px;padding:3px 9px;border-radius:20px;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary)}
+
+.note-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;margin-top:12px;border-right:3px solid #534AB7;border-top-right-radius:0;border-bottom-right-radius:0}
+.note-txt{font-size:12.5px;color:var(--color-text-secondary)}
+.dod{font-size:12px;color:#0F6E56;margin-top:10px;display:flex;gap:6px;align-items:flex-start}
+
+.footer{padding:1rem 1.5rem;font-size:12px;color:var(--color-text-tertiary);border-top:0.5px solid var(--color-border-tertiary);margin-top:1rem}
+@media(max-width:560px){.cols{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.tech-n{min-width:90px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hdr">
+  <div class="hdr-title">EduCommunity Egypt — خطة التنفيذ التفصيلية v3</div>
+  <div class="hdr-sub">منصة تعليمية اجتماعية لطلاب مصر · Full-Stack · 4 مراحل + مسار جودة مستمر · الديدلاين ~20/7/2026</div>
+  <div class="pills">
+    <span class="pill p-node"><i class="ti ti-brand-nodejs" aria-hidden="true"></i> Node.js + Express</span>
+    <span class="pill p-react"><i class="ti ti-brand-react" aria-hidden="true"></i> React + Vite + TS</span>
+    <span class="pill p-mongo"><i class="ti ti-database" aria-hidden="true"></i> MongoDB + Mongoose</span>
+    <span class="pill p-cloud"><i class="ti ti-shield" aria-hidden="true"></i> JWT</span>
+    <span class="pill p-cloud"><i class="ti ti-brackets" aria-hidden="true"></i> Tailwind + shadcn/ui</span>
+    <span class="pill p-new"><i class="ti ti-check" aria-hidden="true"></i> Zod (جديد)</span>
+    <span class="pill p-new"><i class="ti ti-cloud" aria-hidden="true"></i> Cloudinary (جديد)</span>
+    <span class="pill p-new"><i class="ti ti-bolt" aria-hidden="true"></i> Socket.IO (جديد)</span>
+    <span class="pill p-new"><i class="ti ti-video" aria-hidden="true"></i> Jitsi (جديد)</span>
+    <span class="pill p-new"><i class="ti ti-test-pipe" aria-hidden="true"></i> Vitest + CI (جديد)</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n" style="color:#534AB7">4</div><div class="stat-l">أسابيع تنفيذ</div></div>
+  <div class="stat"><div class="stat-n" style="color:#1D9E75">5</div><div class="stat-l">مراحل</div></div>
+  <div class="stat"><div class="stat-n" style="color:#BA7517">12</div><div class="stat-l">ميزة أساسية</div></div>
+  <div class="stat"><div class="stat-n" style="color:#993C1D">15+</div><div class="stat-l">تقنية سوق عمل</div></div>
+</div>
+
+<div class="track-wrap">
+  <div class="track">
+    <div class="seg" style="background:#185FA5;flex:1"></div>
+    <div class="seg" style="background:#0F6E56;flex:1"></div>
+    <div class="seg" style="background:#854F0B;flex:1"></div>
+    <div class="seg" style="background:#993C1D;flex:1"></div>
+  </div>
+  <div class="tl"><span>22 يونيو</span><span>29 يونيو</span><span>6 يوليو</span><span>13 يوليو</span><span>20 يوليو</span></div>
+</div>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#185FA5"></div>م1 · الأساس والمعمار</div>
+  <div class="li"><div class="ld" style="background:#0F6E56"></div>م2 · المواد والدروس</div>
+  <div class="li"><div class="ld" style="background:#854F0B"></div>م3 · التفاعل اللحظي</div>
+  <div class="li"><div class="ld" style="background:#993C1D"></div>م4 · السوفت سكيلز والمكافآت</div>
+  <div class="li"><div class="ld" style="background:#5F5E5A"></div>مستمر · الجودة والنشر</div>
+</div>
+
+<div class="phases-wrap" id="phases"></div>
+
+<div class="footer">
+  <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+  ملاحظة: ملف <code>educommunity-backend/database/schema.sql</code> مكتوب بـ PostgreSQL بينما الكود يستخدم MongoDB — يُحذف أو يُحوّل لتوثيق Mongo في المرحلة 1.
+  &nbsp;·&nbsp; خط MVP المضمون = ركّز على مهام كل مرحلة الأساسية تسلّم منصة متكاملة حتى لو ضغط الوقت.
+</div>
+
+</div>
+
+<script>
+const phases=[
+  {
+    color:"#185FA5",bg:"#E6F1FB",tc:"#0C447C",num:"1",weeks:"الأسبوع 1 · 22–28 يونيو",
+    name:"الأساس والمعمار (Foundation)",
+    goal:"أرضية احترافية + تقوية الموجود قبل بناء أي ميزة جديدة. نحوّل الكود من منطق داخل الـroutes إلى معمار طبقي.",
+    be:[
+      {t:"إعادة هيكلة طبقية: routes → controllers → services → models + utils/config"},
+      {t:"API versioning: كل المسارات تحت /api/v1"},
+      {t:"Auth بنظام dual-token: bcrypt + JWT (access قصير + refresh)",n:true},
+      {t:"Role-based middleware: student / teacher / admin + permission guards"},
+      {t:"Zod validators على كل endpoint (تحقق المدخلات)",n:true},
+      {t:"معالج أخطاء مركزي + express-async-errors + رد موحّد {success,data,error}",n:true},
+      {t:"أمان: helmet + CORS + express-rate-limit على /auth",n:true},
+      {t:"Pagination utility موحّدة + dotenv config layer"}
+    ],
+    fe:[
+      {t:"إعادة التنظيم feature-based: features/auth, materials, chat..."},
+      {t:"فورمز Login/Register بـ react-hook-form + Zod",n:true},
+      {t:"React Router + Protected Routes + توجيه حسب الـrole"},
+      {t:"Axios/fetch instance مع JWT interceptor + refresh logic في lib/api.ts"},
+      {t:"AuthContext (أو zustand) لحالة المستخدم + custom hook useAuth"},
+      {t:"Toasts + Loading/Skeleton states"}
+    ],
+    tech:[
+      {n:"Zod",b:"تحقّق بيانات وقت التشغيل + توليد TypeScript types — نفس الـschema يتشارك بين الباك والفرونت"},
+      {n:"JWT refresh token",b:"جلسات أأمن: access token عمره 15 دقيقة + refresh يجدّده تلقائيًا"},
+      {n:"express-rate-limit",b:"يحد عدد الطلبات لكل IP → حماية من brute-force"},
+      {n:"react-hook-form",b:"إدارة فورمز بأداء عالي وكود أنضف، يتكامل مع Zod"},
+      {n:"express-async-errors",b:"يمسك أخطاء async تلقائيًا ويلغي تكرار try/catch"}
+    ],
+    deliverables:["API v1","dual-token auth","role middleware","validation layer","protected routes","error handler"],
+    note:"نظام الـ refresh token معيار حقيقي في كل الشركات — هو نقطة قوة واضحة قدام لجنة التخرج.",
+    dod:"كل المسارات تحت /api/v1، الفورمز تتحقق بـZod، والدخول بالأدوار الثلاثة شغّال مع توجيه صحيح."
+  },
+  {
+    color:"#0F6E56",bg:"#E1F5EE",tc:"#085041",num:"2",weeks:"الأسبوع 2 · 29 يونيو – 5 يوليو",
+    name:"المواد والدروس (قلب المنصة)",
+    goal:"بناء جوهر فكرتك المفقود: مكتبة مواد لكل صف + فيديوهات شرح + مواد الصف التالي في الإجازة.",
+    be:[
+      {t:"موديل Subject (اسم / صف / وصف)"},
+      {t:"موديل Material (عنوان / subject / grade / type: pdf|video|graphic / fileUrl / isNextGrade / uploadedBy)"},
+      {t:"CRUD endpoints + فلترة بالصف/المادة/النوع + pagination"},
+      {t:"رفع ملفات: multer + Cloudinary (تخزين وتحسين تلقائي)",n:true},
+      {t:"RBAC: الرفع للمدرس/الأدمن فقط"},
+      {t:"Text index للبحث داخل المواد (اختياري)"}
+    ],
+    fe:[
+      {t:"صفحة Subjects: تصفّح حسب الصف"},
+      {t:"صفحة Materials: فلاتر + بحث عبر react-query",n:true},
+      {t:"واجهة رفع للمدرس (react-hook-form + رفع Cloudinary)"},
+      {t:"PDF viewer مدمج (react-pdf) + مشغّل فيديو",n:true},
+      {t:"قسم الفيديوهات/الجرافيك التوضيحي للنظريات الصعبة"},
+      {t:"ميزة «مواد الصف التالي في الإجازة» (فلتر isNextGrade)"},
+      {t:"Skeleton loaders للتحميل"}
+    ],
+    tech:[
+      {n:"Cloudinary",b:"تخزين الصور/الفيديو على CDN عالمي بدل سيرفرك → رفع وعرض أسرع وقابل للتوسّع"},
+      {n:"@tanstack/react-query",b:"كاش وتحديث تلقائي لقوائم المواد بدون كود يدوي"},
+      {n:"react-pdf",b:"عرض ملفات الـPDF داخل الصفحة بدل تحميلها"}
+    ],
+    deliverables:["Subject/Material models","رفع Cloudinary","صفحات تصفّح","مشغّل ميديا","فلتر الصف التالي"],
+    note:"Cloudinary بيشيل عبء الميديا عن سيرفرك ويخليه يكبر بسهولة — pattern شائع في الشركات.",
+    dod:"الطالب يتصفّح مواد صفّه ويفتح PDF/فيديو، والمدرس يرفع مادة تظهر فورًا."
+  },
+  {
+    color:"#854F0B",bg:"#FAEEDA",tc:"#633806",num:"3",weeks:"الأسبوع 3 · 6–12 يوليو",
+    name:"التفاعل اللحظي (Real-time)",
+    goal:"الشات بين الطلاب + الإشعارات الفورية + الدروس أونلاين + ترشيح أميز المدرسين.",
+    be:[
+      {t:"دمج Socket.IO مع Express على نفس السيرفر",n:true},
+      {t:"موديل Message + غرف لكل صف (rooms) + رسائل خاصة (DM)"},
+      {t:"أحداث socket: join_room, send_message, typing, online_users"},
+      {t:"موديل Notification + إشعارات لحظية (رسالة/تقييم/تحدي)"},
+      {t:"محرّك ترشيح المدرسين: ترتيب بمتوسط التقييم (weighted average)"},
+      {t:"موديل Lesson (مدرس/موعد/رابط Jitsi/صف) + حجز الطالب"}
+    ],
+    fe:[
+      {t:"واجهة الشات (غرف + رسائل + typing + online) بـ socket.io-client",n:true},
+      {t:"جرس الإشعارات اللحظية مع عدّاد"},
+      {t:"قسم المدرسين المرشّحين + بطاقة مدرس + star rating"},
+      {t:"صفحة الدروس أونلاين + دمج Jitsi عبر iframe",n:true},
+      {t:"Optimistic updates للرسائل"}
+    ],
+    tech:[
+      {n:"Socket.IO",b:"اتصال لحظي ثنائي الاتجاه — المعيار الصناعي للشات والإشعارات الفورية"},
+      {n:"Jitsi Meet (embed)",b:"فيديو لايف للدروس عبر iframe جاهز بدون بناء WebRTC من الصفر (مجاني ومفتوح المصدر)"},
+      {n:"socket.io-client",b:"مكتبة الفرونت اللي بتتكلم مع سيرفر Socket.IO"}
+    ],
+    deliverables:["شات لحظي","غرف الصفوف","إشعارات","ترشيح مدرسين","دروس Jitsi"],
+    note:"Socket.IO و الفيديو اللايف بيرفعوا المشروع لمستوى احترافي يتميّز عن أغلب مشاريع التخرج.",
+    dod:"طالبان في نفس الصف يتشاتوا لحظيًا، وقسم المدرسين يرتّب الأعلى تقييمًا فوق."
+  },
+  {
+    color:"#993C1D",bg:"#FAECE7",tc:"#711b13",num:"4",weeks:"الأسبوع 4 · 13–20 يوليو",
+    name:"السوفت سكيلز والمكافآت + التسليم",
+    goal:"الأنشطة والمكافآت اللي بتميّز فكرتك + اللمسات النهائية وتجهيز العرض.",
+    be:[
+      {t:"موديل SoftSkillTask (قراءة/بحث/وصف/درجة) + Submission (رفع بريزنتيشن + درجة + feedback)"},
+      {t:"توسيع Challenge لمسابقات Problem-Solving (مؤقّتة + تصحيح + leaderboard خاص)"},
+      {t:"موديل Reward: متفوقين (شارات/مؤتمرات) + مدرسين (مكافأة/تكريم) يديره الأدمن"},
+      {t:"موديل SportsActivity (بحث/تعلّم + تسجيل نشاط)"},
+      {t:"endpoints تحليلات للأدمن بـ Aggregation pipelines",n:true}
+    ],
+    fe:[
+      {t:"صفحة السوفت سكيلز (عرض التاسك + رفع بريزنتيشن + عرض الدرجة)"},
+      {t:"صفحة المسابقات + countdown timer + leaderboard"},
+      {t:"لوحة المكافآت + إدارتها من الأدمن"},
+      {t:"داشبورد تحليلات بـ Recharts (charts متعددة)",n:true},
+      {t:"قسم الأنشطة الرياضية"}
+    ],
+    tech:[
+      {n:"Recharts",b:"رسوم بيانية احترافية لداشبورد الأدمن (موجود ضمن shadcn عندك)"},
+      {n:"MongoDB Aggregation",b:"حساب الإحصائيات والتجميع على مستوى قاعدة البيانات بكفاءة"},
+      {n:"canvas-confetti (اختياري)",b:"احتفال بصري عند كسب الطالب شارة → UX أحلى"}
+    ],
+    deliverables:["soft-skills tasks","رفع بريزنتيشن","مسابقات","نظام مكافآت","داشبورد تحليلات"],
+    note:"تاسكات السوفت سكيلز ونظام المكافآت هما اللي بيخلّوا فكرتك مختلفة عن أي منصة تعليمية عادية.",
+    dod:"الطالب يخلّص تاسك ويرفع بريزنتيشن وياخد درجة، والأدمن يشوف تحليلات ويدير المكافآت."
+  },
+  {
+    color:"#5F5E5A",bg:"#F1EFE8",tc:"#444441",num:"★",weeks:"مستمر · طوال الأربع أسابيع",
+    name:"الجودة والنشر (Continuous)",
+    goal:"شغل بيمشي بالتوازي مع كل المراحل — هو الفرق بين مشروع تخرج عادي ومشروع يفتح باب شغل.",
+    be:[
+      {t:"Vitest/Jest unit tests للـservices والـutils",n:true},
+      {t:"Supertest integration tests للـAPIs الأساسية",n:true},
+      {t:"GitHub Actions CI: lint + test عند كل push",n:true},
+      {t:"Docker Compose (Node + MongoDB) للبيئة المحلية — اختياري",n:true},
+      {t:"توثيق API بـ Swagger/OpenAPI + Postman collection",n:true},
+      {t:"نشر الباك على Render أو Railway مع env variables"}
+    ],
+    fe:[
+      {t:"Vitest + React Testing Library للمكوّنات المهمة",n:true},
+      {t:"نشر الفرونت على Vercel (vercel.json موجود)"},
+      {t:"إدارة env (.env.production)"},
+      {t:"README احترافي + screenshots + رابط demo",n:true},
+      {t:"Lighthouse audit للأداء"}
+    ],
+    tech:[
+      {n:"Vitest + Supertest",b:"اختبارات للفرونت والباك → ثقة عند التعديل ودليل جودة"},
+      {n:"GitHub Actions",b:"CI/CD يشغّل الاختبارات تلقائيًا مع كل push ويمنع كسر المشروع"},
+      {n:"Swagger / OpenAPI",b:"توثيق تفاعلي لكل الـendpoints — يسهّل العرض على اللجنة"},
+      {n:"Docker",b:"بيئة موحّدة تشتغل على أي جهاز بنفس النتيجة"}
+    ],
+    deliverables:["اختبارات","CI/CD","Swagger docs","نشر online","README"],
+    note:"حتى لو عملت الـMust بس، وجود اختبارات + CI/CD + توثيق بيرفع تقييم المشروع كتير.",
+    dod:"المشروع منشور online، فيه اختبارات تمر في CI، وتوثيق Swagger شغّال."
+  }
+];
+
+const wrap=document.getElementById('phases');
+phases.forEach((p,i)=>{
+  const card=document.createElement('div');
+  card.className='pc';
+  card.style.borderRightColor=p.color;
+  const li=(arr,cls)=>arr.map(x=>`<li class="${cls}">${x.t}${x.n?'<span class="focus-tag tag-new">جديد</span>':''}</li>`).join('');
+  const techRows=p.tech.map(t=>`<div class="tech-row"><span class="tech-n">${t.n}</span><span class="tech-b">${t.b}</span></div>`).join('');
+  const del=p.deliverables.map(d=>`<span class="del-tag">${d}</span>`).join('');
+  card.innerHTML=`
+    <div class="ph" onclick="tog(${i})">
+      <div class="badge" style="background:${p.bg};color:${p.tc}">${p.num}</div>
+      <div class="ptw"><div class="pname">${p.name}</div><div class="pwk">${p.weeks}</div></div>
+      <div class="tog" id="t${i}">&#8964;</div>
+    </div>
+    <div class="pbody" id="b${i}">
+      <div class="goal"><i class="ti ti-target" aria-hidden="true"></i> ${p.goal}</div>
+      <div class="cols">
+        <div class="cc"><div class="ct ct-be"><i class="ti ti-server" aria-hidden="true"></i> Backend</div><ul class="tl-list">${li(p.be,'be-d')}</ul></div>
+        <div class="cc"><div class="ct ct-fe"><i class="ti ti-layout-dashboard" aria-hidden="true"></i> Frontend</div><ul class="tl-list">${li(p.fe,'fe-d')}</ul></div>
+      </div>
+      <div class="sec-lbl"><i class="ti ti-stack-2" aria-hidden="true"></i> التقنيات المستخدمة وفايدتها</div>
+      <div class="tech-list">${techRows}</div>
+      <div class="sec-lbl"><i class="ti ti-package" aria-hidden="true"></i> المخرجات</div>
+      <div class="del-tags">${del}</div>
+      <div class="note-box"><div class="note-txt"><i class="ti ti-bulb" aria-hidden="true"></i> ${p.note}</div></div>
+      <div class="dod"><i class="ti ti-circle-check" aria-hidden="true"></i> <span><b>تمّت لما:</b> ${p.dod}</span></div>
+    </div>`;
+  wrap.appendChild(card);
+});
+function tog(i){
+  const b=document.getElementById('b'+i),t=document.getElementById('t'+i);
+  const open=b.classList.contains('open');
+  b.classList.toggle('open',!open);t.classList.toggle('open',!open);
+}
+tog(0);
+</script>
+</body>
+</html>
